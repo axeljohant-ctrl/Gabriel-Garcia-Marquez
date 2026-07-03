@@ -1,0 +1,395 @@
+/* ==========================================
+   1. Estilos Generales y Base
+   ========================================== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ddd2b8; /* Fondo crema tipo museo */
+    color: #333333;
+    margin: 0;
+    padding: 0;
+}
+
+/* ==========================================
+   2. Menú de Navegación (Uso de Clases)
+   ========================================== */
+.menu-navegacion {
+    background-color: #1a1a1a; /* Fondo oscuro elegante */
+    padding: 15px;
+    text-align: center;
+}
+
+.enlace-menu {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+/* Efecto Hover para interactividad */
+.enlace-menu:hover {
+    color: #cca43b; /* Dorado artístico al pasar el cursor */
+}
+
+/* ==========================================
+   3. Contenedor y Textos (Uso de Clases)
+   ========================================== */
+.contenedor-principal {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* CAMBIO: El título principal de la página ahora es mucho más vistoso */
+.titulo-galeria {
+    font-size: 80px;           /* Más grande e imponente */
+    font-weight: 800;          /* Letra con más carácter visual */
+    color: #1a1a1a;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.subtitulo {
+    font-style: italic;
+    color: #380606;
+    margin-bottom: 35px;
+    font-size: 16px;
+}
+/* ==========================================================================
+   FASE 4: LÍNEA DE TIEMPO VISUAL (Carrusel Dinámico)
+   ========================================================================== */
+.seccion-carrusel {
+    max-width: 1000px;          /* <-- Cambia este valor para achicar el cuadro blanco */
+    margin: 50px auto;          /* Lo mantiene centrado */
+    padding: 0 24px;            
+    box-sizing: border-box;
+}
+
+/* Modifica el título para que se centre */
+.seccion-carrusel .titulo-galeria-secundaria {
+    text-align: center;         /* Centra el texto del título */
+    margin-bottom: 30px;        /* Espacio elegante abajo del título */
+}
+
+.carrusel-contenedor {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 30px 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2ded5;
+    position: relative;
+    width: 100%;                /* Ocupa el ancho disponible de la sección */
+    box-sizing: border-box;
+}
+/* Alineación horizontal obligatoria */
+.carrusel-track {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 30px;
+    overflow-x: auto;
+    padding-bottom: 15px;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Oculta barra en Firefox */
+}
+
+.carrusel-track::-webkit-scrollbar {
+    display: none; /* Oculta barra en Chrome/Safari */
+}
+
+/* Tamaño controlado de cada hito */
+.carrusel-item {
+    flex: 0 0 180px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.carrusel-ano {
+    background-color: #cca43b;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+}
+
+.marco-carrusel {
+    background-color: #000000;
+    padding: 8px;
+    border: 2px solid #333333;
+    width: 100%;
+    height: 220px; /* Forzamos la altura del cuadro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.marco-carrusel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carrusel-titulo {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-top: 10px;
+}
+
+/* Botones de Flechas flechas */
+.btn-carrusel {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(26, 26, 26, 0.8);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 10;
+}
+.prev { left: 5px; }
+.next { right: 5px; }
+
+/* ==========================================
+   4. Obra Destacada (Uso de ID y Clases) - CORREGIDO
+   ========================================== */
+#obra-principal {
+    background-color: #1a1a1a; /* Fondo oscuro elegante de sala de exposición */
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;       /* Bordes un toque más suaves */
+    padding: 35px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* EL MARCO: Encaja la imagen limpia en un tamaño pequeño y controlado */
+#obra-principal .marco-cuadro {
+    background-color: #121212; /* Fondo muy oscuro para centrar la atención en la obra */
+    padding: 12px;             /* Simula el marco físico del cuadro */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    margin-bottom: 25px;
+    width: 100%;
+    max-width: 450px;          /* CAMBIO: Controla el ancho máximo para que se vea pequeña y estilizada */
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+/* LA IMAGEN: Ajustada y completa sin deformarse jamás */
+#obra-principal .imagen-cuadro {
+    width: 100%;
+    height: 280px;             /* CAMBIO: Altura fija más pequeña para que no se trague la pantalla */
+    display: block;
+    object-fit: contain;       /* CLAVE: Muestra la pintura COMPLETA sin recortarle ni un solo borde */
+}
+
+/* LA ZONA DE INFORMACIÓN: Textos organizados y legibles */
+#obra-principal .info-cuadro {
+    text-align: center;
+    width: 100%;
+}
+
+/* El título de la obra interna: Letra blanca y legible */
+#obra-principal .info-cuadro h2 {
+    color: #ffffff;            /* CAMBIO: Letras en blanco impecable */
+    font-size: 24px;
+    font-weight: 700;
+    margin: 10px 0 6px 0;
+}
+
+/* El autor/homenaje: Resalta sobre el fondo oscuro */
+#obra-principal .autor {
+    color: #cca43b;            /* Mantiene el dorado artístico premium */
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 14px;
+}
+
+/* La descripción: Texto en blanco suave para una lectura descansada */
+#obra-principal .descripcion {
+    line-height: 1.6;
+    color: #cccccc;            /* CAMBIO: Párrafo en blanco suave/gris claro */
+    font-size: 14.5px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ==========================================
+   5. Pie de Página
+   ========================================== */
+footer {
+    background-color: #1a1a1a;
+    color: #888888;
+    text-align: center;
+    padding: 15px;
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+/* ==========================================
+   6. Galería Secundaria (Tarjetas de Abajo)
+   ========================================== */
+.galeria-gabo {
+    margin: 40px auto;
+    max-width: 1200px;
+    padding: 0 24px;
+    box-sizing: border-box;
+}
+
+.titulo-galeria-secundaria {
+    color: #333;
+    text-align: left;
+    font-size: 2rem;
+    margin-bottom: 22px;
+}
+
+/* CONTENEDOR: Mantiene la fila estricta horizontal y nivela alturas */
+.contenedor-cards-linea {
+    display: flex !important;
+    flex-direction: row !important;       /* Fuerza las 3 tarjetas en una fila horizontal */
+    flex-wrap: nowrap !important;         /* Prohíbe tajantemente que se bajen de línea */
+    justify-content: center !important;   /* Centra las tarjetas en el espacio disponible */
+    align-items: stretch !important;      /* Hace que las 3 tarjetas midan exactamente lo mismo de alto */
+    gap: 24px !important;                 /* Separación idéntica entre tarjetas */
+    width: 100% !important;
+}
+
+/* LA TARJETA: Tamaño fijo e idéntico para simular el carrusel */
+.card-obra-secundaria {
+    background: #c5af74f3;
+    border-radius: 18px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.11), 0 1.5px 4px rgba(0,0,0,0.07);
+    
+    /* Reparte el ancho equitativamente y fija límites estrictos */
+    flex: 1;                   
+    width: 340px;              
+    min-width: 280px;          
+    max-width: 340px;          
+    
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: column;    /* Imagen arriba, texto abajo */
+    overflow: hidden;          /* Mantiene los bordes redondeados */
+    transition: box-shadow 0.26s, transform 0.24s;
+}
+
+.card-obra-secundaria:hover {
+    box-shadow: 0 14px 34px rgba(204,164,59,0.14), 0 1.5px 8px rgba(0,0,0,0.10);
+    transform: translateY(-5px) scale(1.03);
+}
+
+/* Limpieza absoluta del marco negro heredado de la sección principal */
+.marco-cuadro-secundario {
+    padding: 0 !important;              
+    margin-bottom: 0 !important;
+    background-color: transparent !important; 
+    background: transparent !important;
+    width: 100%;
+    box-shadow: none !important;        
+    border-radius: 0;
+}
+
+.marco-cuadro-secundario a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+
+/* LA IMAGEN: Completa, acoplada al contenedor sin deformarse */
+.imagen-cuadro-secundaria {
+    border-radius: 8px !important;      
+    object-fit: contain !important;      
+    height: 160px !important;           
+    width: 100% !important;              
+    max-height: 160px !important; 
+    display: block !important;
+    box-shadow: none !important;        
+    background-color: #f7f4eb;          
+    padding: 5px;                        
+    box-sizing: border-box;        
+}
+
+/* TEXTO ABAJO: Súper organizado */
+.card-obra-secundaria .info-cuadro {
+    padding: 20px; 
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;        
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Separación vertical perfecta entre título, año y descripción */
+}
+
+.card-obra-secundaria h3 {
+    font-size: 1.2rem;
+    color: #000000;
+    margin: 0;               
+    font-weight: bold;
+}
+
+.card-obra-secundaria .autor {
+    font-size: 0.95rem !important;
+    color: #443204 !important;          
+    margin: 0 !important;
+    font-weight: bold !important;
+}
+
+.card-obra-secundaria .descripcion {
+    font-size: 0.9rem !important;
+    color: #555555 !important;
+    line-height: 1.4 !important;
+    margin: 0 !important;
+    text-align: left !important;
+}
+
+/* RESPONSIVE DESIGN: Si la pantalla es muy chica (móviles), pasa a columna para no colapsar */
+@media (max-width: 950px) {
+    .contenedor-cards-linea {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 20px !important;
+    }
+    .card-obra-secundaria {
+        width: 100%;
+        max-width: 360px;
+    }
+    .galeria-gabo {
+        padding: 0 8px;
+    }
+}
+
+@media (max-width: 600px) {
+    .titulo-galeria-secundaria {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+    .contenedor-cards-linea {
+        flex-direction: column !important;
+        gap: 20px !important;
+        align-items: center !important;
+    }
+    .card-obra-secundaria {
+        width: 100%;
+        max-width: 340px;   
+    }
+    .imagen-cuadro-secundaria {
+        height: 200px !important; /* En celular baja proporcionalmente */
+        max-height: 200px !important;
+    }
+    .card-obra-secundaria .info-cuadro {
+        padding: 18px 16px;
+    }
+}
